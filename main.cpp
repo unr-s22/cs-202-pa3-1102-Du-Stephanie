@@ -28,18 +28,17 @@ int main(void)
     
     std::cout << account << std::endl;
 
-    //testing the operators 
     Money m(100,10);
     Money n(100,10);
-    if(m > n) 
+    if(m > n) {
         std::cout << "Operator: > not working" << std::endl; 
         
-     else 
+    } else {
         std::cout << "Operator: > is working" << std::endl; 
+    }
     
-
     if(m < n) {
-        std::cout << "Operator: < is working" << std::endl; 
+        std::cout << "Operator: < is not working" << std::endl; 
 
     } else {
         std::cout << "Operator: < is working" << std::endl; 
@@ -49,25 +48,25 @@ int main(void)
         std::cout << "Operator: <= is working" << std::endl; 
 
     } else {
-        std::cout << "Operator: <= is working" << std::endl; 
+        std::cout << "Operator: <= is not working" << std::endl; 
     }
 
     if(m >= n) {
         std::cout << "Operator: >= is working" << std::endl; 
 
     } else {
-        std::cout << "Operator: >= is working" << std::endl; 
+        std::cout << "Operator: >= is not working" << std::endl; 
     }
 
     if(m == n) {
         std::cout << "Operator: == is working" << std::endl; 
 
     } else {
-        std::cout << "Operator: == is working" << std::endl; 
+        std::cout << "Operator: == is not working" << std::endl; 
     }
 
     if(m != n) {
-        std::cout << "Operator: != is working" << std::endl; 
+        std::cout << "Operator: != is not working" << std::endl; 
 
     } else {
         std::cout << "Operator: != is working" << std::endl; 
@@ -75,18 +74,18 @@ int main(void)
 
     Money moneyMinusTest(0,0); 
     Money moneyAddTest(200,20); 
-    if((m - m) == moneyMinusTest) {
+    if((m - n) == moneyMinusTest) {
         std::cout << "Operator: - is working" << std::endl; 
 
     } else {
-        std::cout << "Operator: -  is working" << std::endl; 
+        std::cout << "Operator: -  is not working" << std::endl; 
     }
 
     if((m + n) == moneyAddTest) {
         std::cout << "Operator: + is working" << std::endl; 
 
     } else {
-        std::cout << "Operator: + is working" << std::endl; 
+        std::cout << "Operator: + is not working" << std::endl; 
     }
 
 }

@@ -42,15 +42,20 @@ bool operator >= (const Money &money1, const Money &money2)
 bool operator == (const Money &money1, const Money &money2) 
 {
     if((money1.money_dollars == money2.money_dollars) && (money1.money_cents == money2.money_cents)) {
-         return true;
+         return false;
     } else {
-        return false; 
+        return true; 
     }
 }
 
 bool operator != (const Money &money1, const Money &money2) 
 {
-    return money1.money_cents != money2.money_cents;  
+    if((money1.money_dollars != money2.money_dollars) || (money1.money_cents != money2.money_cents)) {
+         return false;
+    } else {
+        return true; 
+    }
+          
 }
 
 Money operator + (const Money &money1, const Money &money2) 
