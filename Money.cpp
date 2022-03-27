@@ -1,7 +1,9 @@
 #include "Money.h"
 
-Money::Money(int dollars, int cents){
-
+Money::Money(int dollars, int cents)
+{
+    money_dollars = dollars;
+    money_cents = cents;
 }
 Money::Money() {
 
@@ -42,18 +44,18 @@ bool operator >= (const Money &money1, const Money &money2)
 bool operator == (const Money &money1, const Money &money2) 
 {
     if((money1.money_dollars == money2.money_dollars) && (money1.money_cents == money2.money_cents)) {
-         return false;
+         return true;
     } else {
-        return true; 
+        return false; 
     }
 }
 
 bool operator != (const Money &money1, const Money &money2) 
 {
     if((money1.money_dollars != money2.money_dollars) || (money1.money_cents != money2.money_cents)) {
-         return false;
+         return true;
     } else {
-        return true; 
+        return false; 
     }
           
 }
@@ -70,6 +72,7 @@ Money operator + (const Money &money1, const Money &money2)
         moneyDollars++;
         moneyCents += moneyCents - 100;
     }
+
     return money;
 }
 
@@ -79,15 +82,17 @@ Money operator - (const Money &money1, const Money &money2) {
 
     Money money(moneyDollars, moneyCents);
 
-    if(moneyCents < 0) {
+    if(moneyCents < 0) 
+    {
         moneyDollars--;
         moneyCents += moneyCents + 100;
     }
+
     return money;
 }
 
 std::ostream &operator<<(std::ostream &os, const Money &money) {
-    os << "$" << money.money_cents * 0.01;
+    os << "$" << money.money_dollars << "." << std::setprecision(2) << std::fixed << money.money_cents;
 
     return os;
 }
